@@ -27,9 +27,9 @@ public class Main {
 
         //guess(word, separate);
         //static void guess(String word, String[] separate) {
-        String guess = key.nextLine();
+        /* String guess = key.nextLine();
         for (String s : separate) {
             guess = String.valueOf(word.equalsIgnoreCase(s));
-        }
+        }*/
     }
 }
