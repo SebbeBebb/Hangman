@@ -21,15 +21,16 @@ public class Main {
 
         String[] separate;
         separate = word.split("");
-        for (String s : separate) {
-            System.out.println(s);
+        guess();
+        String guess = key.nextLine();
+        for (int i=0; i< separate.length; i++) {
+            if (guess.equalsIgnoreCase(separate[i])) {
+                System.out.println(guess+" is in position "+i);
+            }
         }
 
-        //guess(word, separate);
-        //static void guess(String word, String[] separate) {
-        /* String guess = key.nextLine();
-        for (String s : separate) {
-            guess = String.valueOf(word.equalsIgnoreCase(s));
-        }*/
+    }
+    public static void guess(){
+
     }
 }
