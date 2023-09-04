@@ -1,6 +1,9 @@
 import java.util.Scanner;
+
 public class Main {
     public static Scanner key = new Scanner(System.in);
+    public static int lives = 5;
+
     public static void main(String[] args) {
         String[] ordlista = new String[11];
         ordlista[0] = "Piston";
@@ -21,16 +24,23 @@ public class Main {
 
         String[] separate;
         separate = word.split("");
-        guess();
         String guess = key.nextLine();
-        for (int i=0; i< separate.length; i++) {
-            if (guess.equalsIgnoreCase(separate[i])) {
-                System.out.println(guess+" is in position "+i);
+        while (lives > 0) {
+            guess(guess, separate);
+        }
+    }
+
+    static void guess(String guess, String[] separate) {
+        if (lives > 0) {
+            for (int i = 0; i < separate.length; i++) {
+                if (guess.equalsIgnoreCase(separate[i])) {
+                    System.out.println(guess + " is in position " + i);
+                    guess(guess, separate);
+                } else {
+                    System.out.println("Wrong!");
+                    lives--;
+                }
             }
         }
-
-    }
-    public static void guess(){
-
     }
 }
